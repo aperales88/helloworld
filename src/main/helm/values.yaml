@@ -8,7 +8,6 @@ image:
   name: "internal/helloworld:1.0"
   pullPolicy: IfNotPresent
 
-
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: "helloworld"
@@ -21,17 +20,8 @@ ingress:
   enabled: true
   className: ""
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    cert-manager.io/cluster-issuer: "selfsigned-issuer"
     kubernetes.io/ingress.class: "nginx"
-  hosts:
-    - host: helloworld.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls:
-    - secretName: example-tls
-      hosts:
-        - helloword.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -53,6 +43,3 @@ env:
     HCHA_PORT: "8443"
     HC_VAULT_TOKEN: "f0533fd9-aa68-fb91-c172-bb2384ee6876"
     HC_VAULT_ACCESSOR: "a78104ff-e958-7870-8267-9f0f6de06d32"
-
-cert-manager:
-  namespace: "cert-manager"

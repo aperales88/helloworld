@@ -1,8 +1,5 @@
 namespace: dev
 
-certificate:
-  name: letsencrypt-prod
-
 ingress:
   hosts:
     - host: helloworld.dev.local

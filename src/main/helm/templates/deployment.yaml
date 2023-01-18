@@ -36,7 +36,7 @@ spec:
             - name: {{ $key | quote }}
               valueFrom:
                 secretKeyRef:
-                  name: release-name-helloworld
+                  name: vault-secret
                   key: {{ $key | quote }}
                   optional: false
             {{- end }}
