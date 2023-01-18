@@ -5,10 +5,9 @@
 replicaCount: 2
 
 image:
-  repository: "dev/helloworld"
+  name: "internal/helloworld:1.0"
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "20230116165137"
+
 
 imagePullSecrets: []
 nameOverride: ""
