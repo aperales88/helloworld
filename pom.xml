@@ -16,9 +16,8 @@
 	<properties>
 		<java.version>17</java.version>
 		<docker.image.name>${project.artifactId}</docker.image.name>
-		<docker.image.prefix>dev</docker.image.prefix>
+		<docker.image.prefix>internal</docker.image.prefix>
 		<docker.from.image>openjdk:17-jdk-slim</docker.from.image>
-		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
 	</properties>
 	<dependencies>
 		<dependency>
