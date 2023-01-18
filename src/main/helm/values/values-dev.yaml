@@ -1,0 +1,15 @@
+namespace: dev
+
+certificate:
+  name: letsencrypt-prod
+
+ingress:
+  hosts:
+    - host: helloworld.dev.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: secret-dev-tls
+      hosts:
+        - helloword.dev.local

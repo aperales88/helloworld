@@ -10,7 +10,7 @@
 	
 	<groupId>com.example</groupId>
 	<artifactId>helloworld</artifactId>
-	<version>0.0.1</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>helloworld</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -39,7 +39,7 @@
 		<url>https://github.com/aperales88/helloworld.git</url>
 		<connection>scm:git:https://github.com/aperales88/helloworld.git</connection>
 		<developerConnection>scm:git:https://github.com/aperales88/helloworld.git</developerConnection>
-		<tag>helloworld-0.0.1</tag>
+		<tag>master</tag>
 	</scm>
 
 	<build>
@@ -63,6 +63,7 @@
 				<configuration>
 					<preparationGoals>clean install</preparationGoals>
 					<goals>deploy</goals>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -73,7 +74,7 @@
 					<verbose>true</verbose>
 					<images>
 						<image>
-							<name>${docker.image.prefix}/${docker.image.name}:${maven.build.timestamp}</name>
+							<name>${docker.image.prefix}/${docker.image.name}:${project.version}</name>
 							<build>
 								<dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir>
 								<assembly>
